@@ -1,23 +1,44 @@
-* {
-  padding: 0;
-  margin: 0;
-}
-
 .main {
   display: flex;
-  height: 85vh;
+  height: 84vh;
   align-items: center;
   justify-content: center;
+  background: rgba(0, 0, 0, 0.7) url("../images/main-background.jpg");
+  background-size: cover;
+  background-blend-mode: darken;
 }
 
-.centered-text {
+.main .centered-text {
   display: flex;
   align-items: center;
   flex-direction: column;
+  z-index: 1;
+  color: white;
 }
 
-.background-image {
+.main .background-image {
   position: absolute;
-  opacity: 0.9;
+  height: 84vh;
+  opacity: 0.8;
   z-index: -999;
+}
+
+.main .centered-text a {
+  text-decoration: none;
+}
+
+.main .centered-text .btns {
+  display: flex;
+}
+
+.main .centered-text .login {
+  margin-right: 10px;
+}
+
+.main .centered-text .login a {
+  color: white;
+}
+
+.main .centered-text .sign-up a {
+  color: black;
 }

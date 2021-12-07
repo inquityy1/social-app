@@ -4,5 +4,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-shrink: 0;
+  color: white;
+}
+
+.footer a {
+  color: blue;
+}
+
+.footer a:active,
+.footer a:hover {
+  transition: all 1s ease;
+  color: white;
 }

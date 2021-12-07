@@ -4,8 +4,13 @@ import "./Footer.css";
 
 function Footer() {
   return (
-    <div className="footer">
-      <p>Copyright @ 2021 Develo P Edia inquityy </p>
+    <div className="footer-container">
+      <div className="footer">
+        <p>
+          Copyright @ 2021 DeveloPPedia by{" "}
+          <a href="https://github.com/inquityy1">inquityy</a>
+        </p>
+      </div>
     </div>
   );
 }
