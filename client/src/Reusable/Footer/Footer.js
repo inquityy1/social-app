@@ -8,7 +8,9 @@ function Footer() {
       <div className="footer">
         <p>
           Copyright @ 2021 DeveloPPedia by{" "}
-          <a href="https://github.com/inquityy1">inquityy</a>
+          <a href="https://github.com/inquityy1" target="_blank">
+            inquityy
+          </a>
         </p>
       </div>
     </div>

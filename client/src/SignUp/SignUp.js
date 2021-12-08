@@ -2,8 +2,11 @@ import React from "react";
 
 function SignUp() {
   return (
-    <div>
-      <h1>SignUp</h1>
+    <div className="sign-up-container">
+      <div className="sign-up">
+        <h1>SignUp</h1>
+        <p>Create your DeveloPEdia account</p>
+      </div>
     </div>
   );
 }
