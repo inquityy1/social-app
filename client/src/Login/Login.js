@@ -14,7 +14,7 @@ function Login() {
         <form className="login-form">
           <input required type="text" placeholder="Email Address" />
           <input required type="password" placeholder="Password" />
-          <button className="btn btn-primary">Submit</button>
+          <input type="Submit" className="btn btn-primary" />
         </form>
       </div>
     </div>

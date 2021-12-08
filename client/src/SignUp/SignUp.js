@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+import useInputState from "../Reusable/Hooks/useInputState";
 
 import "./SignUp.css";
 
 function SignUp() {
+  const [name, updateName] = useInputState("");
+  const [email, updateEmail] = useInputState("");
+  const [password, updatePassword] = useInputState("");
+  const [confirmPassword, updateConfirmPassword] = useInputState("");
+
   return (
     <div className="sign-up-container">
       <div className="sign-up">
@@ -12,11 +18,33 @@ function SignUp() {
         </div>
 
         <form className="sign-up-form">
-          <input required type="text" placeholder="Name" />
-          <input required type="text" placeholder="Email Address" />
-          <input required type="password" placeholder="Password" />
-          <input required type="password" placeholder="Confirm Password" />
-          <button className="btn btn-primary">Submit</button>
+          <input
+            required
+            type="text"
+            placeholder="Name"
+            value={name}
+            onChange={updateName}
+          />
+          <input
+            required
+            type="text"
+            placeholder="Email Address"
+            value={email}
+            onChange={updateEmail}
+          />
+          <input
+            type="password"
+            placeholder="Enter The Password"
+            value={password}
+            onChange={updatePassword}
+          />
+          <input
+            type="password"
+            placeholder="Confirm Password"
+            value={confirmPassword}
+            onChange={updateConfirmPassword}
+          />
+          <input type="Submit" className="btn btn-primary" />
         </form>
       </div>
     </div>
