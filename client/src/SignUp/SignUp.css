@@ -1,0 +1,29 @@
+.sign-up-container {
+  display: flex;
+  justify-content: center;
+  height: 84vh;
+  margin-top: 20px;
+}
+
+.sign-up-container .sign-up .sign-up-title {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sign-up-container .sign-up .sign-up-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sign-up-container .sign-up .sign-up-form input,
+.sign-up-container .sign-up .sign-up-form button {
+  margin-top: 20px;
+  width: 60vw;
+  height: 5vh;
+}
+
+::placeholder {
+  padding-left: 10px;
+}
