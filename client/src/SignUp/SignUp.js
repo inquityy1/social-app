@@ -1,13 +1,11 @@
-import React, { useState } from "react";
-import useInputState from "../Reusable/Hooks/useInputState";
+import React from "react";
+import useForm from "../Reusable/Hooks/useForm";
+import validate from "./ValidateInfo";
 
 import "./SignUp.css";
 
 function SignUp() {
-  const [name, updateName] = useInputState("");
-  const [email, updateEmail] = useInputState("");
-  const [password, updatePassword] = useInputState("");
-  const [confirmPassword, updateConfirmPassword] = useInputState("");
+  const { handleChange, values, handleSubmit, errors } = useForm(validate);
 
   return (
     <div className="sign-up-container">
@@ -17,34 +15,40 @@ function SignUp() {
           <p>Create your DeveloPEdia account</p>
         </div>
 
-        <form className="sign-up-form">
+        <form onSubmit={handleSubmit} className="sign-up-form">
           <input
-            required
             type="text"
-            placeholder="Name"
-            value={name}
-            onChange={updateName}
+            name="username"
+            placeholder="Enter The Name"
+            value={values.username}
+            onChange={handleChange}
           />
+          {errors.username && <p>{errors.username}</p>}
           <input
-            required
-            type="text"
-            placeholder="Email Address"
-            value={email}
-            onChange={updateEmail}
+            type="email"
+            name="email"
+            placeholder="Enter The Email Address"
+            value={values.email}
+            onChange={handleChange}
           />
+          {errors.email && <p>{errors.email}</p>}
           <input
             type="password"
+            name="password"
             placeholder="Enter The Password"
-            value={password}
-            onChange={updatePassword}
+            value={values.password}
+            onChange={handleChange}
           />
+          {errors.password && <p>{errors.password}</p>}
           <input
             type="password"
+            name="confirmPassword"
             placeholder="Confirm Password"
-            value={confirmPassword}
-            onChange={updateConfirmPassword}
+            value={values.confirmPassword}
+            onChange={handleChange}
           />
-          <input type="Submit" className="btn btn-primary" />
+          {errors.confirmPassword && <p>{errors.confirmPassword}</p>}
+          <button className="btn btn-primary">Submit</button>
         </form>
       </div>
     </div>
