@@ -2,8 +2,11 @@ import React from "react";
 import useForm from "../Reusable/Hooks/useForm";
 import validate from "../Reusable/ValidateInfo/ValidateInfo";
 
-function LoginForm() {
-  const { handleChange, values, handleSubmit, errors } = useForm(validate);
+function LoginForm({ submitForm }) {
+  const { handleChange, values, handleSubmit, errors } = useForm(
+    submitForm,
+    validate
+  );
 
   return (
     <div className="login">
@@ -16,7 +19,7 @@ function LoginForm() {
         <input
           type="text"
           name="email"
-          placeholder="Email Address"
+          placeholder="Enter Your Email Address"
           value={values.email}
           onChange={handleChange}
         />
@@ -24,7 +27,7 @@ function LoginForm() {
         <input
           type="password"
           name="password"
-          placeholder="Password"
+          placeholder="Enter Your Password"
           value={values.password}
           onChange={handleChange}
         />
