@@ -28,6 +28,19 @@ form p {
   height: 5vh;
 }
 
+.form-content-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.form-content-right img {
+  position: absolute;
+  opacity: 0.5;
+  z-index: -999;
+}
+
 ::placeholder {
   padding-left: 10px;
 }

@@ -2,8 +2,11 @@ import React from "react";
 import useForm from "../Reusable/Hooks/useForm";
 import validate from "../Reusable/ValidateInfo/ValidateInfo";
 
-function SignUpForm() {
-  const { handleChange, values, handleSubmit, errors } = useForm(validate);
+function SignUpForm({ submitForm }) {
+  const { handleChange, values, handleSubmit, errors } = useForm(
+    submitForm,
+    validate
+  );
 
   return (
     <div className="sign-up">
