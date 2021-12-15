@@ -1,6 +1,6 @@
 import React from "react";
-import useForm from "../Reusable/Hooks/useForm";
-import validate from "../Reusable/ValidateInfo/ValidateInfo";
+import useForm from "../Shared/hooks/useForm";
+import validate from "../Shared/validateInfo/ValidateInfo";
 
 function LoginForm({ submitForm }) {
   const { handleChange, values, handleSubmit, errors } = useForm(

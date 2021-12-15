@@ -1,9 +1,11 @@
-import Main from "./Main/Main";
-import Login from "./Login/Login";
-import SignUp from "./SignUp/SignUp";
-import Header from "./Reusable/Header/Header";
-import Footer from "./Reusable/Footer/Footer";
+import Main from "./main/Main";
+import Login from "./login/Login";
+import SignUp from "./signUp/SignUp";
+import Dashboard from "./dashboard/Dashboard";
+import Header from "./Shared/header/Header";
+import Footer from "./Shared/footer/Footer";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import "./App.css";
 
 function App() {
@@ -15,6 +17,7 @@ function App() {
         <Route path="/" element={<Main />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<SignUp />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
 
       <Footer />
