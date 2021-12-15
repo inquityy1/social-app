@@ -1,0 +1,44 @@
+.dashboard-container {
+  height: 84vh;
+  display: flex;
+  justify-content: center;
+}
+
+.dashboard-container .title {
+  margin-top: 15px;
+}
+
+.dashboard-container .title a {
+  text-decoration: none;
+}
+
+.dashboard-container .buttons {
+  margin-top: 30px;
+}
+
+.dashboard-container .buttons i {
+  color: rgb(74, 208, 253);
+  margin-right: 10px;
+}
+
+.dashboard-container .buttons a {
+  border: none;
+  background-color: whitesmoke;
+}
+
+.dashboard-container .buttons a:hover {
+  background-color: gray;
+}
+
+.dashboard-container .tables {
+  margin-top: 30px;
+  width: 80vw;
+}
+
+.dashboard-container .tables .table {
+  border-top: gray 1px solid;
+}
+
+.dashboard-container .tables .education-table {
+  margin-top: 30px;
+}
