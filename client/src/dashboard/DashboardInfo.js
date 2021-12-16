@@ -18,10 +18,10 @@ function DashboardInfo() {
         <Link to="" class="btn btn-outline-secondary">
           <i class="fas fa-user-circle"></i>Edit Profile
         </Link>
-        <Link to="" class="btn btn-outline-secondary">
+        <Link to="/add-experience" class="btn btn-outline-secondary">
           <i class="fab fa-black-tie"></i>Add Experience
         </Link>
-        <Link to="" class="btn btn-outline-secondary">
+        <Link to="/add-education" class="btn btn-outline-secondary">
           <i class="fas fa-graduation-cap"></i>Add Education
         </Link>
       </div>
@@ -39,7 +39,7 @@ function DashboardInfo() {
             </thead>
             <tbody>
               <tr>
-                <td>inquityy</td>
+                <td>inquityy1</td>
                 <td>junior dev</td>
                 <td>2021/12/15-current</td>
                 <td>

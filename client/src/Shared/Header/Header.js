@@ -13,7 +13,10 @@ function Header() {
           DeveloPEdia
         </Link>
 
-        <Link className={pathname === "/developers" ? "active" : ""} to="#">
+        <Link
+          className={pathname === "/profiles" ? "active" : ""}
+          to="/profiles"
+        >
           Developers
         </Link>
       </div>
