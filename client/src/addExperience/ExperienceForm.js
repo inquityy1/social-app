@@ -9,42 +9,54 @@ function ExperienceForm() {
   return (
     <div className="experience">
       <div className="title">
-        <Link to="/dashboard" class="btn btn-outline-secondary">
-          Go Back
-        </Link>
-        <h1>Add Experience</h1>
-        <h4>Add any job or position that you had in the past or current</h4>
+        <div>
+          <Link to="/dashboard" class="btn btn-outline-secondary">
+            Go Back
+          </Link>
+        </div>
+        <div className="title-text">
+          <h1>Add Experience</h1>
+          <h5>Add any job or position that you had in the past or current</h5>
+        </div>
       </div>
 
       <form onSubmit={handleSubmit} className="experience-form">
-        <label for="fname">* = required field</label>
-        <input type="text" name="username" placeholder="Nebojsa" />
-        <input type="text" name="username" placeholder="Junior Developer" />
-        <input type="text" name="username" placeholder="Vrbovac" />
+        <div className="text">
+          <small>* = required field</small>
+          <input type="text" name="username" placeholder="Nebojsa" />
+          <input type="text" name="username" placeholder="Junior Developer" />
+          <input type="text" name="username" placeholder="Vrbovac" />
+        </div>
+        <div className="date">
+          <label>From Date</label>
+          <input
+            type="date"
+            name="trip-start"
+            min="1950-01-01"
+            max="2004-12-31"
+          ></input>
+          <label>To Date</label>
+          <input
+            type="date"
+            name="trip-start"
+            min="1950-01-01"
+            max="2004-12-31"
+          ></input>
+        </div>
 
-        <label for="fname">From Date</label>
-        <input
-          type="date"
-          name="trip-start"
-          min="1950-01-01"
-          max="2004-12-31"
-        ></input>
+        <div className="checkbox">
+          <input type="checkbox" />
+          <span>Current Job</span>
+        </div>
 
-        <label for="fname">To Date</label>
-        <input
-          type="date"
-          name="trip-start"
-          min="1950-01-01"
-          max="2004-12-31"
-        ></input>
+        <div className="textarea">
+          <textarea name="description" rows="3" cols="50" />
+          <small>Tell us about the position</small>
+        </div>
 
-        <input type="checkbox" />
-        <span>current</span>
-
-        <textarea name="description" rows="3" cols="50" />
-        <p>Tell us about the position</p>
-
-        <button>Submit</button>
+        <div className="experience-button">
+          <button className="btn btn-primary">Submit</button>
+        </div>
       </form>
     </div>
   );
