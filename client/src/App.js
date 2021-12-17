@@ -5,6 +5,7 @@ import Dashboard from "./dashboard/Dashboard";
 import Header from "./Shared/header/Header";
 import Footer from "./Shared/footer/Footer";
 import AddExperience from "./addExperience/AddExperience";
+import AddEducation from "./addEducation/AddEducation";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import "./App.css";
@@ -20,6 +21,7 @@ function App() {
         <Route path="/register" element={<SignUp />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/add-experience" element={<AddExperience />} />
+        <Route path="/add-education" element={<AddEducation />} />
       </Routes>
 
       <Footer />
