@@ -7,7 +7,7 @@ function Footer() {
     <div className="footer-container">
       <div className="footer">
         <p>
-          Copyright @ 2021 DeveloPPedia by{" "}
+          Copyright @ 2021 DeveloPEdia by{" "}
           <a href="https://github.com/inquityy1" target="_blank">
             inquityy
           </a>
