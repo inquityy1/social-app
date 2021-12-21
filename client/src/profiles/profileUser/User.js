@@ -31,7 +31,7 @@ export default function User() {
         <div className="table-infos">
           <div className="experience">
             <h3>Experience</h3>
-            <div className="experience-card">
+            <div className="experience-card card">
               <h4>inquityy</h4>
               <p>2021/11/20 - Now</p>
               <p>
@@ -46,7 +46,10 @@ export default function User() {
             </div>
           </div>
           <div className="education">
-            <p>No Education Listed</p>
+            <h3>Education</h3>
+            <div className="education-card card">
+              <p>No Education Listed</p>
+            </div>
           </div>
         </div>
       </div>
