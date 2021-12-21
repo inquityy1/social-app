@@ -21,6 +21,7 @@
 .profiles .user-info-container .icon {
   font-size: 100px;
   color: rgb(197, 194, 194);
+  margin-left: 10px;
 }
 
 .profiles .user-info-container .user-info {

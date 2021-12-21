@@ -1,0 +1,32 @@
+.profile-container {
+  display: flex;
+  justify-content: center;
+}
+
+.profile a {
+  margin: 10px 0 10px 0;
+}
+
+.profile .profile-infos .main-infos {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(3, 154, 204);
+  width: 80vw;
+  height: 60vh;
+  color: white;
+  border-radius: 5px;
+}
+
+.profile .profile-infos .main-infos .fa-user-circle {
+  font-size: 25vh;
+  color: lightgray;
+}
+
+.profile .profile-infos .main-infos > * {
+  margin-top: 20px;
+}
+
+.profile .profile-infos .main-infos .fa-globe {
+  font-size: 20px;
+}

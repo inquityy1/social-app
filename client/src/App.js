@@ -6,7 +6,8 @@ import Header from "./Shared/header/Header";
 import Footer from "./Shared/footer/Footer";
 import AddExperience from "./addExperience/AddExperience";
 import AddEducation from "./addEducation/AddEducation";
-import Profiles from "./profiles/Profiles";
+import Profiles from "./profiles/profilesCard/Profiles";
+import UserProfile from "./profiles/profileUser/UserProfile";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import "./App.css";
@@ -24,6 +25,7 @@ function App() {
         <Route path="/add-experience" element={<AddExperience />} />
         <Route path="/add-education" element={<AddEducation />} />
         <Route path="/profiles" element={<Profiles />} />
+        <Route path="/profiles/:name" element={<UserProfile />} />
       </Routes>
 
       <Footer />
