@@ -1,0 +1,44 @@
+.profiles-container {
+  height: 84vh;
+}
+
+.profiles,
+.profiles .title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profiles .user-info-container {
+  display: flex;
+  align-items: center;
+  padding-right: 20px;
+  width: 80%;
+  background-color: whitesmoke;
+  box-shadow: 6px 11px 16px -4px rgba(0, 0, 0, 0.88);
+}
+
+.profiles .user-info-container .icon {
+  font-size: 100px;
+  color: rgb(197, 194, 194);
+}
+
+.profiles .user-info-container .user-info {
+  display: flex;
+  margin: 10px 0 10px 20px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.profiles .user-info-container .user-info .skill {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding-right: 150px;
+}
+
+.profiles .user-info-container .user-info .skill i {
+  font-size: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
