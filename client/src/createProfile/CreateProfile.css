@@ -1,0 +1,43 @@
+.create-profile-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 20px 0;
+}
+
+.create-profile h6 {
+  margin-bottom: 20px;
+}
+
+.create-profile form {
+  display: flex;
+  flex-direction: column;
+}
+
+.create-profile small {
+  color: rgb(138, 136, 136);
+}
+
+.create-profile .text,
+.create-profile .date,
+.create-profile .textarea {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  margin-top: 10px;
+}
+
+.create-profile .text input,
+.create-profile .date input {
+  height: 40px;
+  border: lightgray 1px solid;
+}
+
+.create-profile .text small {
+  margin-bottom: 20px;
+}
+
+.create-profile .create-profile-button button {
+  width: 80vw;
+  height: 55px;
+  margin-top: 20px;
+}
