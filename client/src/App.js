@@ -2,6 +2,7 @@ import Main from "./main/Main";
 import Login from "./login/Login";
 import SignUp from "./signUp/SignUp";
 import Dashboard from "./dashboard/Dashboard";
+import PostFeed from "./postFeed/PostFeed";
 import Header from "./Shared/header/Header";
 import Footer from "./Shared/footer/Footer";
 import EditProfile from "./editProfile/EditProfile";
@@ -24,6 +25,7 @@ function App() {
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/register" element={<SignUp />} />
         <Route exact path="/dashboard" element={<Dashboard />} />
+        <Route exact path="/feed" element={<PostFeed />} />
         <Route exact path="/edit-profile" element={<EditProfile />} />
         <Route exact path="/add-experience" element={<AddExperience />} />
         <Route exact path="/add-education" element={<AddEducation />} />
