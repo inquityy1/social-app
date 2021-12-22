@@ -29,7 +29,7 @@ function Header() {
           <i class="far fa-address-card"></i>Dashboard
         </Link>
 
-        <Link className={pathname === "/postfeed" ? "active" : ""} to="#">
+        <Link className={pathname === "/feed" ? "active" : ""} to="/feed">
           <i class="far fa-comments"></i>Post Feed
         </Link>
 
