@@ -19,12 +19,9 @@ export default function CreatePost() {
               rows="3"
               cols="50"
             />
-            <button
-              style={{ backgroundColor: "black" }}
-              className="btn btn-primary"
-            >
-              Submit
-            </button>
+            <div className="submit">
+              <button className="btn btn-primary">Submit</button>
+            </div>
           </form>
         </div>
       </div>
@@ -36,10 +33,10 @@ export default function CreatePost() {
         <div className="comment-buttons">
           <h5>asdghjshadhasg</h5>
           <div>
-            <button>
+            <button className="btn btn-light">
               <i class="far fa-thumbs-up">0</i>
             </button>
-            <button>
+            <button className="btn btn-light">
               <i class="far fa-thumbs-down"></i>
             </button>
             <button className="btn btn-primary">Comments</button>
