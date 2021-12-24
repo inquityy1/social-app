@@ -40,6 +40,7 @@
   display: flex;
   margin-top: 10px;
   border: 1px rgb(196, 191, 191) solid;
+  width: 80vw;
 }
 
 .post-feed .posted-post .user-avatar {
@@ -56,6 +57,10 @@
 
 .post-feed .posted-post .user-avatar p {
   margin-top: 10px;
+}
+
+.post-feed .posted-post h5 {
+  margin-top: 15px;
 }
 
 .post-feed .posted-post .comment-buttons button {
