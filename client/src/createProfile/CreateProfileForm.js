@@ -44,7 +44,7 @@ export default function CreateProfileForm() {
           <small>Could be your own websiite or a company one</small>
 
           <input type="text" name="city" placeholder="City/State" />
-          <small>City or city ^ state suggested eg: Belgrade, SRB</small>
+          <small>City or ^ state suggested eg: Belgrade, SRB</small>
 
           <input
             type="text"
