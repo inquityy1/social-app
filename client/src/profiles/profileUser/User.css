@@ -64,10 +64,15 @@
   margin: 20px 0 20px 0;
 }
 
+.profile .profile-infos .table-infos .margin > * {
+  margin-left: 20px;
+  margin-top: 15px;
+}
+
 .profile .profile-infos .table-infos .experience-card,
 .profile .profile-infos .table-infos .education-card {
   background-color: whitesmoke;
   width: 42vw;
-  height: 25vh;
+  height: 55vh;
   margin-top: 20px;
 }

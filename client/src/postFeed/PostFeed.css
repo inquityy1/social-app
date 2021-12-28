@@ -1,6 +1,9 @@
 .post-feed-container {
   display: flex;
   justify-content: center;
+}
+
+.post-feed {
   height: 84vh;
 }
 

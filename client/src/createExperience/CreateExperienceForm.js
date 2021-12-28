@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function EducationForm() {
+function CreateExperienceForm() {
   function handleSubmit(e) {
     e.preventDefault();
   }
 
   return (
-    <div className="education">
+    <div className="experience">
       <div className="title">
         <div>
           <Link to="/dashboard" class="btn btn-outline-secondary">
@@ -15,23 +15,17 @@ function EducationForm() {
           </Link>
         </div>
         <div className="title-text">
-          <h1>Add Education</h1>
-          <h5>
-            Add any education or school that you had in the past or current
-          </h5>
+          <h1>Add Experience</h1>
+          <h5>Add any job or position that you had in the past or current</h5>
         </div>
       </div>
 
-      <form onSubmit={handleSubmit} className="education-form">
+      <form onSubmit={handleSubmit} className="experience-form">
         <div className="text">
           <small>* = required field</small>
-          <input type="text" name="username" placeholder="School" />
-          <input
-            type="text"
-            name="username"
-            placeholder="Degree or Certification"
-          />
-          <input type="text" name="username" placeholder="Field Of Study" />
+          <input type="text" name="username" placeholder="Nebojsa" />
+          <input type="text" name="username" placeholder="Junior Developer" />
+          <input type="text" name="username" placeholder="Vrbovac" />
         </div>
         <div className="date">
           <label>From Date</label>
@@ -52,20 +46,15 @@ function EducationForm() {
 
         <div className="checkbox">
           <input type="checkbox" />
-          <span>Current School</span>
+          <span>Current Job</span>
         </div>
 
         <div className="textarea">
-          <textarea
-            name="description"
-            rows="3"
-            cols="50"
-            placeholder="Description"
-          />
+          <textarea name="description" rows="3" cols="50" />
           <small>Tell us about the position</small>
         </div>
 
-        <div className="education-button">
+        <div className="experience-button">
           <button className="btn btn-primary">Submit</button>
         </div>
       </form>
@@ -73,4 +62,4 @@ function EducationForm() {
   );
 }
 
-export default EducationForm;
+export default CreateExperienceForm;

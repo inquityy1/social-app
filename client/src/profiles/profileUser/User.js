@@ -32,23 +32,27 @@ export default function User() {
           <div className="experience">
             <h3>Experience</h3>
             <div className="experience-card card">
-              <h4>inquityy</h4>
-              <p>2021/11/20 - Now</p>
-              <p>
-                <span>Position:</span> Junior Dev
-              </p>
-              <p>
-                <span>Position:</span> Vrbovac
-              </p>
-              <p>
-                <span>Description:</span> Senior
-              </p>
+              <div className="margin">
+                <h4>inquityy</h4>
+                <p>2021/11/20 - Now</p>
+                <p>
+                  <span>Position:</span> Junior Dev
+                </p>
+                <p>
+                  <span>Position:</span> Vrbovac
+                </p>
+                <p>
+                  <span>Description:</span> Senior
+                </p>
+              </div>
             </div>
           </div>
           <div className="education">
             <h3>Education</h3>
             <div className="education-card card">
-              <p>No Education Listed</p>
+              <div className="margin">
+                <p>No Education Listed</p>
+              </div>
             </div>
           </div>
         </div>

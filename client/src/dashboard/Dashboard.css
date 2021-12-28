@@ -1,7 +1,10 @@
 .dashboard-container {
-  height: 84vh;
   display: flex;
   justify-content: center;
+}
+
+.dashboard {
+  height: 84vh;
 }
 
 .dashboard-container .title {

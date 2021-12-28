@@ -1,46 +1,47 @@
-.education-container {
+.experience-container {
   display: flex;
   justify-content: center;
-  height: 84vh;
+  margin-top: 20px;
+  margin-bottom: 35px;
 }
 
-.education .title .title-text {
+.experience .title .title-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.education .title .title-text h5 {
+.experience .title .title-text h5 {
   margin-top: 10px;
 }
 
-.education form {
+.experience form {
   display: flex;
   flex-direction: column;
 }
 
-.education small {
+.experience small {
   color: rgb(138, 136, 136);
 }
 
-.education .text,
-.education .date,
-.education .textarea {
+.experience .text,
+.experience .date,
+.experience .textarea {
   display: flex;
   flex-direction: column;
   width: 80vw;
   margin-top: 10px;
 }
 
-.education .text input,
-.education .date input {
+.experience .text input,
+.experience .date input {
   margin-bottom: 10px;
   height: 40px;
   border: lightgray 1px solid;
 }
 
-.education .education-button button {
+.experience .experience-button button {
   width: 80vw;
   height: 55px;
   margin-top: 20px;
