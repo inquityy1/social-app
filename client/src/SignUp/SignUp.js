@@ -6,6 +6,7 @@ import "./SignUp.css";
 
 function SignUp() {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  console.log("IS SUBMITED");
 
   function submitForm() {
     setIsSubmitted(true);
