@@ -6,10 +6,6 @@ import "./Login.css";
 function Login() {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  console.log("neka promena12345678");
-
-  console.log("neka promena123");
-
   function submitForm() {
     setIsSubmitted(true);
   }
