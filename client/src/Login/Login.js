@@ -5,6 +5,7 @@ import "./Login.css";
 
 function Login() {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  console.log("BAD CODE");
 
   function submitForm() {
     setIsSubmitted(true);
