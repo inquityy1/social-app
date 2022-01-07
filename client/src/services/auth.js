@@ -2,18 +2,20 @@ import axios from "axios";
 import { API_URL } from "../consts";
 
 const login = async (userData) => {
-  try {
-    const userResponse = await axios.post(`${API_URL}/users/login`, userData)
+  return axios.post(`${API_URL}/users/login`, userData)
+  // try {
+  //   const userResponse = await axios.post(`${API_URL}/users/login`, userData)
 
-    if (!userResponse) {
-      throw new Error("Wrong credentials");
-    }
+  //   if (!userResponse) {s
+  //     throw new Error("Wrong credentials");
+  //   }
 
-    localStorage.setItem("user", JSON.stringify(userResponse));
-    return userResponse;
-  } catch (error) {
-    throw error;
-  }
+  //   localStorage.setItem("user", JSON.stringify(userResponse));
+  //   return userResponse;
+  // } catch (error) {
+  //   throw error;
+  // }
+
 };
 
 // export const loginUser = userData => dispatch => {
