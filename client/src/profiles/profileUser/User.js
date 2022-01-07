@@ -4,17 +4,17 @@ import { Link } from "react-router-dom";
 export default function User() {
   return (
     <div className="profile">
-      <Link to="/dashboard" class="btn btn-outline-secondary">
+      <Link to="/dashboard" className="btn btn-outline-secondary">
         Back To Profiles
       </Link>
 
       <div className="profile-infos">
         <div className="main-infos">
-          <i class="fas fa-user-circle"></i>
+          <i className="fas fa-user-circle"></i>
           <h1>Nebojsa</h1>
           <p>Junior developer</p>
           <p>Vrbovac</p>
-          <i class="fas fa-globe"></i>
+          <i className="fas fa-globe"></i>
         </div>
         <div className="skill-bio">
           <div className="bio">
@@ -24,7 +24,7 @@ export default function User() {
           <div className="skill">
             <h3>Skill Set</h3>
             <p>
-              <i class="fas fa-check"></i> Typescript
+              <i className="fas fa-check"></i> Typescript
             </p>
           </div>
         </div>

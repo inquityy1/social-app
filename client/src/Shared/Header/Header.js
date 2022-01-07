@@ -26,15 +26,15 @@ function Header() {
           className={pathname === "/dashboard" ? "active" : ""}
           to="/dashboard"
         >
-          <i class="far fa-address-card"></i>Dashboard
+          <i className="far fa-address-card"></i>Dashboard
         </Link>
 
         <Link className={pathname === "/feed" ? "active" : ""} to="/feed">
-          <i class="far fa-comments"></i>Post Feed
+          <i className="far fa-comments"></i>Post Feed
         </Link>
 
         <Link className={pathname === "/" ? "active" : ""} to="/">
-          <i class="far fa-user-circle"></i>Logout
+          <i className="far fa-user-circle"></i>Logout
         </Link>
       </div>
 

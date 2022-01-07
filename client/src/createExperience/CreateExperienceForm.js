@@ -10,7 +10,7 @@ function CreateExperienceForm() {
     <div className="experience">
       <div className="title">
         <div>
-          <Link to="/dashboard" class="btn btn-outline-secondary">
+          <Link to="/dashboard" className="btn btn-outline-secondary">
             Go Back
           </Link>
         </div>

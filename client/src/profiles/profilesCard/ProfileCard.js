@@ -13,7 +13,7 @@ function ProfileCard() {
 
       <div className="user-info-container">
         <div className="icon">
-          <i class="fas fa-user-circle"></i>
+          <i className="fas fa-user-circle"></i>
         </div>
         <div className="user-info">
           <div className="description">
@@ -27,7 +27,7 @@ function ProfileCard() {
           <div className="right-card">
             <h3>Skill Set:</h3>
             <h3 className="skill">
-              <i class="fas fa-check"></i> React JS
+              <i className="fas fa-check"></i> React JS
             </h3>
           </div>
         </div>

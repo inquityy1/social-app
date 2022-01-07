@@ -10,7 +10,7 @@ function CreateEditForm() {
     <div className="edit-profile">
       <div className="title">
         <div>
-          <Link to="/dashboard" class="btn btn-outline-secondary">
+          <Link to="/dashboard" className="btn btn-outline-secondary">
             Go Back
           </Link>
         </div>
@@ -28,7 +28,7 @@ function CreateEditForm() {
             nickname
           </small>
 
-          <select class="form-control">
+          <select className="form-control">
             <option>Inter</option>
             <option>Junior</option>
             <option>Medior</option>
