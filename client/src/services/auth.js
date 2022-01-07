@@ -3,7 +3,7 @@ import { API_URL } from "../consts";
 
 const login = async (userData) => {
   try {
-    const userResponse = await axios.post(`${api}/users/login`, userData)
+    const userResponse = await axios.post(`${API_URL}/users/login`, userData)
 
     if (!userResponse) {
       throw new Error("Wrong credentials");
@@ -40,12 +40,8 @@ const login = async (userData) => {
 // };
 
 const signIn = async (userData) => {
-    try {
-        await axios.post(`${API_URL}/users/register`, userData)
-    } catch (error) {
-      throw error;
-    }
-  };
+  return axios.post(`${API_URL}/users/register`, userData)
+};
   
 
 // const getCurrentUser = () => {

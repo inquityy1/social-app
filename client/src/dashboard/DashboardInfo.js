@@ -15,21 +15,21 @@ function DashboardInfo() {
       </div>
 
       <div className="buttons">
-        <Link to="/edit-profile" class="btn btn-outline-secondary">
-          <i class="fas fa-user-circle"></i>Edit Profile
+        <Link to="/edit-profile" className="btn btn-outline-secondary">
+          <i className="fas fa-user-circle"></i>Edit Profile
         </Link>
-        <Link to="/add-experience" class="btn btn-outline-secondary">
-          <i class="fab fa-black-tie"></i>Add Experience
+        <Link to="/add-experience" className="btn btn-outline-secondary">
+          <i className="fab fa-black-tie"></i>Add Experience
         </Link>
-        <Link to="/add-education" class="btn btn-outline-secondary">
-          <i class="fas fa-graduation-cap"></i>Add Education
+        <Link to="/add-education" className="btn btn-outline-secondary">
+          <i className="fas fa-graduation-cap"></i>Add Education
         </Link>
       </div>
 
       <div className="tables">
         <div className="experience-table">
           <h2>Eperience Details</h2>
-          <table class="table">
+          <table className="table">
             <thead>
               <tr>
                 <th scope="col">Company</th>
@@ -52,7 +52,7 @@ function DashboardInfo() {
 
         <div className="education-table">
           <h2>Education Details</h2>
-          <table class="table">
+          <table className="table">
             <thead>
               <tr>
                 <th scope="col">School</th>

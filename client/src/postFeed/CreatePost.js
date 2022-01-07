@@ -27,17 +27,17 @@ export default function CreatePost() {
       </div>
       <div className="posted-post">
         <div className="user-avatar">
-          <i class="fas fa-user-circle"></i>
+          <i className="fas fa-user-circle"></i>
           <p>Nebojsa</p>
         </div>
         <div className="comment-buttons">
           <h5>asdghjshadhasg</h5>
           <div>
             <button className="btn btn-light">
-              <i class="far fa-thumbs-up">0</i>
+              <i className="far fa-thumbs-up">0</i>
             </button>
             <button className="btn btn-light">
-              <i class="far fa-thumbs-down"></i>
+              <i className="far fa-thumbs-down"></i>
             </button>
             <button className="btn btn-primary">Comments</button>
             <button className="btn btn-danger">X</button>

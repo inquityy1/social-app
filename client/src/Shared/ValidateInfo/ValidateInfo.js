@@ -2,8 +2,8 @@ export default function validateInfo(values) {
   let errors = {};
 
   //Username
-  if (!values.username.trim()) {
-    errors.username = "Username required";
+  if (!values.name.trim()) {
+    errors.name = "Name required";
   }
 
   //Email
@@ -20,10 +20,10 @@ export default function validateInfo(values) {
     errors.password = "Password needs to be 6 characters or more";
   }
 
-  if (!values.confirmPassword) {
-    errors.confirmPassword = "Password is required";
-  } else if (values.confirmPassword !== values.password) {
-    errors.confirmPassword = "Passwords do not match";
+  if (!values.password2) {
+    errors.password2 = "Password is required";
+  } else if (values.password2 !== values.password) {
+    errors.password2 = "Passwords do not match";
   }
 
   return errors;

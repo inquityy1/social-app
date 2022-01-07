@@ -1,9 +1,9 @@
 import React from "react";
-import useForm from "../Shared/hooks/useForm";
 import validate from "../Shared/validateInfo/ValidateInfo";
+import useCreateUserForm from "./hooks/useCreateUserForm";
 
 function SignUpForm({ submitForm }) {
-  const { handleChange, values, handleSubmit, errors } = useForm(
+  const { handleChange, values, handleSubmit, errors } = useCreateUserForm(
     submitForm,
     validate
   );
@@ -18,12 +18,12 @@ function SignUpForm({ submitForm }) {
       <form onSubmit={handleSubmit} className="sign-up-form">
         <input
           type="text"
-          name="username"
+          name="name"
           placeholder="Enter The Name"
-          value={values.username}
+          value={values.name}
           onChange={handleChange}
         />
-        {errors.username && <p>{errors.username}</p>}
+        {errors.name && <p>{errors.name}</p>}
         <input
           type="text"
           name="email"
@@ -42,12 +42,12 @@ function SignUpForm({ submitForm }) {
         {errors.password && <p>{errors.password}</p>}
         <input
           type="password"
-          name="confirmPassword"
+          name="password2"
           placeholder="Confirm Password"
-          value={values.confirmPassword}
+          value={values.password2}
           onChange={handleChange}
         />
-        {errors.confirmPassword && <p>{errors.confirmPassword}</p>}
+        {errors.password2 && <p>{errors.password2}</p>}
         <button className="btn btn-primary">Submit</button>
       </form>
     </div>
