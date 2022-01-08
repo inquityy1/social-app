@@ -1,12 +1,10 @@
 import React from "react";
-import validate from "../Shared/validateInfo/ValidateInfo";
-import useCreateUserForm from "./hooks/useCreateUserForm";
+import validateInfoSignUp from "./validateInfo/ValidateInfoSignUp";
+import useCreateUserFormSignUp from "./hooks/useCreateUserFormSignUp";
 
 function SignUpForm({ submitForm }) {
-  const { handleChange, values, handleSubmit, errors } = useCreateUserForm(
-    submitForm,
-    validate
-  );
+  const { handleChange, values, handleSubmit, errors } =
+    useCreateUserFormSignUp(submitForm, validateInfoSignUp);
 
   return (
     <div className="sign-up">

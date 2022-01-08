@@ -1,4 +1,4 @@
-export default function validateInfo(values) {
+export default function validateInfoSignUp(values) {
   let errors = {};
 
   //Username
@@ -20,6 +20,7 @@ export default function validateInfo(values) {
     errors.password = "Password needs to be 6 characters or more";
   }
 
+  //Password2
   if (!values.password2) {
     errors.password2 = "Password is required";
   } else if (values.password2 !== values.password) {
