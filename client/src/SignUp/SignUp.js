@@ -10,26 +10,21 @@ function SignUp() {
   const [isError, setIsError] = useState(false);
   const submitForm = async (userData) => {
     try {
-      await UseCreateUser(userData)
-      setIsError(false)
+      await UseCreateUser(userData);
+      setIsError(false);
     } catch (error) {
       if (error.response.status === 400) {
-        setIsError(true)
+        setIsError(true);
       }
       throw error;
     }
-    setIsError(false)
+    setIsError(false);
     setIsSubmitted(true);
-  }
+  };
 
   return (
     <div className="sign-up-container">
-      {isError ? (
-        <div>
-          Email already exists!
-        </div>
-      ) : null
-      }
+      {isError ? <div>Email already exists!</div> : null}
       {!isSubmitted ? (
         <SignUpForm submitForm={submitForm} />
       ) : (
