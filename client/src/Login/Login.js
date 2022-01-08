@@ -1,12 +1,20 @@
 import React, { useState } from "react";
 import LoginForm from "./LoginForm";
 import UseLoginUser from "./useCases/LoginUser";
+import { useNavigate } from "react-router-dom";
+import WrongEmail from "./WrongEmail";
 
 import "./Login.css";
 
 function Login() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isError, setIsError] = useState(false);
+  const navigate = useNavigate();
+
+  const goToDashboard = () => {
+    navigate("/dashboard");
+  };
+
   const submitForm = async (userData) => {
     try {
       console.log("radi");
@@ -24,11 +32,12 @@ function Login() {
 
   return (
     <div className="login-container">
-      {isError ? <div>Email doesn't exists!</div> : null}
-      {!isSubmitted ? (
+      {isError ? (
+        <WrongEmail />
+      ) : !isSubmitted ? (
         <LoginForm submitForm={submitForm} />
       ) : (
-        <h1>dsadsadasdsadas</h1>
+        goToDashboard()
       )}
     </div>
   );
