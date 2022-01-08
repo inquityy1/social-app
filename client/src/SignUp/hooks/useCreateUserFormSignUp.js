@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useCreateUserForm = (submitForm, validate) => {
+const useCreateUserFormSignUp = (submitForm, validate) => {
   const [values, setValues] = useState({
     name: "",
     email: "",
@@ -27,11 +27,11 @@ const useCreateUserForm = (submitForm, validate) => {
 
   useEffect(() => {
     if (Object.keys(errors).length === 0 && isSubmitting) {
-        submitForm(values);
+      submitForm(values);
     }
   }, [isSubmitting, submitForm, errors, values]);
 
   return { handleChange, values, handleSubmit, errors };
 };
 
-export default useCreateUserForm;
+export default useCreateUserFormSignUp;
