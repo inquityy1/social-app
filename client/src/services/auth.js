@@ -2,7 +2,7 @@ import axios from "axios";
 import { API_URL } from "../consts";
 
 const login = async (userData) => {
-  return axios.post(`${API_URL}/users/login`, userData)
+  return axios.post(`${API_URL}/users/login`, userData);
   // try {
   //   const userResponse = await axios.post(`${API_URL}/users/login`, userData)
 
@@ -15,7 +15,6 @@ const login = async (userData) => {
   // } catch (error) {
   //   throw error;
   // }
-
 };
 
 // export const loginUser = userData => dispatch => {
@@ -42,9 +41,8 @@ const login = async (userData) => {
 // };
 
 const signIn = async (userData) => {
-  return axios.post(`${API_URL}/users/register`, userData)
+  return axios.post(`${API_URL}/users/register`, userData);
 };
-  
 
 // const getCurrentUser = () => {
 //   return JSON.parse(localStorage.getItem("user"));
@@ -55,8 +53,8 @@ const signIn = async (userData) => {
 // };
 
 export default {
-//   getCurrentUser,
+  //   getCurrentUser,
   login,
   signIn,
-//   logout,
+  //   logout,
 };

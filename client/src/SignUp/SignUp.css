@@ -44,3 +44,16 @@
 ::placeholder {
   padding-left: 10px;
 }
+
+.denied {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.denied img {
+  position: absolute;
+  z-index: -100;
+  height: 40vh;
+  opacity: 0.6;
+}

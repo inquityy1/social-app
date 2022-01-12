@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useForm = (callback, validate) => {
+const useCreateUserFormSignUp = (submitForm, validate) => {
   const [values, setValues] = useState({
     email: "",
     password: "",
@@ -25,11 +25,11 @@ const useForm = (callback, validate) => {
 
   useEffect(() => {
     if (Object.keys(errors).length === 0 && isSubmitting) {
-      callback();
+      submitForm(values);
     }
-  }, [errors]);
+  }, [isSubmitting, submitForm, errors, values]);
 
-  return { handleChange, handleSubmit, values, errors };
+  return { handleChange, values, handleSubmit, errors };
 };
 
-export default useForm;
+export default useCreateUserFormSignUp;
