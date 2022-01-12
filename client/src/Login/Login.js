@@ -19,9 +19,9 @@ function Login() {
   const submitForm = async (userData) => {
     try {
       const response = await UseLoginUser(userData);
-      console.log('RESSS', response)
+      const token = response.data.token;
       // Set token to ls
-      localStorage.setItem('jwtToken', response.data.token);
+      localStorage.setItem('jwtToken', token);
       // Set token to Auth header
       setAuthToken(token);
 
