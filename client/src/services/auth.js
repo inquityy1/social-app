@@ -9,12 +9,13 @@ const signIn = async (userData) => {
   return axios.post(`${API_URL}/users/register`, userData);
 };
 
-const logout = () => {
-  localStorage.removeItem('jwtToken');
-};
+// The cleanup is done directly in header
+// const logout = () => {
+//   localStorage.removeItem("jwtToken");
+// };
 
 export default {
   login,
   signIn,
-  logout,
+  // logout,
 };
