@@ -17,8 +17,8 @@
   flex-direction: column;
   background-color: rgb(3, 154, 204);
   width: 84vw;
-  height: 60vh;
   color: white;
+  padding-bottom: 20px;
   border-radius: 5px;
 }
 
