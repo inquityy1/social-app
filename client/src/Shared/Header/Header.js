@@ -1,10 +1,15 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import logout from "../../services/auth";
 
 import "./Header.css";
 
 function Header() {
   let { pathname } = useLocation();
+
+  const deleteCookie = () => {
+    localStorage.removeItem("jwtToken");
+  };
 
   return (
     <nav className="header">
@@ -33,7 +38,11 @@ function Header() {
           <i className="far fa-comments"></i>Post Feed
         </Link>
 
-        <Link className={pathname === "/" ? "active" : ""} to="/">
+        <Link
+          onClick={deleteCookie}
+          className={pathname === "/" ? "active" : ""}
+          to="/"
+        >
           <i className="far fa-user-circle"></i>Logout
         </Link>
       </div>
