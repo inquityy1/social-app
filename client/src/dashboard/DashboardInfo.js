@@ -24,6 +24,8 @@ function DashboardInfo() {
         <Link to="/add-education" className="btn btn-outline-secondary">
           <i className="fas fa-graduation-cap"></i>Add Education
         </Link>
+
+        <button className="btn btn-danger">Delete My Account</button>
       </div>
 
       <div className="tables">
@@ -63,10 +65,6 @@ function DashboardInfo() {
             <tbody></tbody>
           </table>
         </div>
-      </div>
-
-      <div className="delete-user">
-        <button className="btn btn-danger">Delete My Account</button>
       </div>
     </div>
   );
