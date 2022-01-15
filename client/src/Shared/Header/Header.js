@@ -10,6 +10,8 @@ function Header() {
     localStorage.removeItem("jwtToken");
   };
 
+  const isLogedIn = localStorage.getItem("jwtToken");
+
   return (
     <nav className="header">
       <div className="left">
@@ -25,39 +27,41 @@ function Header() {
         </Link>
       </div>
 
-      <div className="center">
-        <Link
-          className={pathname === "/dashboard" ? "active" : ""}
-          to="/dashboard"
-        >
-          <i className="far fa-address-card"></i>Dashboard
-        </Link>
+      {isLogedIn ? (
+        <div className="center">
+          <Link
+            className={pathname === "/dashboard" ? "active" : ""}
+            to="/dashboard"
+          >
+            <i className="far fa-address-card"></i>Dashboard
+          </Link>
 
-        <Link className={pathname === "/feed" ? "active" : ""} to="/feed">
-          <i className="far fa-comments"></i>Post Feed
-        </Link>
+          <Link className={pathname === "/feed" ? "active" : ""} to="/feed">
+            <i className="far fa-comments"></i>Post Feed
+          </Link>
 
-        <Link
-          onClick={deleteCookie}
-          className={pathname === "/" ? "active" : ""}
-          to="/"
-        >
-          <i className="far fa-user-circle"></i>Logout
-        </Link>
-      </div>
+          <Link
+            onClick={deleteCookie}
+            className={pathname === "/" ? "active" : ""}
+            to="/"
+          >
+            <i className="far fa-user-circle"></i>Logout
+          </Link>
+        </div>
+      ) : (
+        <div className="right">
+          <Link className={pathname === "/login" ? "active" : ""} to="/login">
+            Login
+          </Link>
 
-      <div className="right">
-        <Link className={pathname === "/login" ? "active" : ""} to="/login">
-          Login
-        </Link>
-
-        <Link
-          className={pathname === "/register" ? "active" : ""}
-          to="/register"
-        >
-          Sign Up
-        </Link>
-      </div>
+          <Link
+            className={pathname === "/register" ? "active" : ""}
+            to="/register"
+          >
+            Sign Up
+          </Link>
+        </div>
+      )}
     </nav>
   );
 }
