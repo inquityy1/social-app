@@ -14,16 +14,18 @@ function DashboardInfo() {
         </p>
       </div>
 
-      <div className="buttons">
-        <Link to="/edit-profile" className="btn btn-outline-secondary">
-          <i className="fas fa-user-circle"></i>Edit Profile
-        </Link>
-        <Link to="/add-experience" className="btn btn-outline-secondary">
-          <i className="fab fa-black-tie"></i>Add Experience
-        </Link>
-        <Link to="/add-education" className="btn btn-outline-secondary">
-          <i className="fas fa-graduation-cap"></i>Add Education
-        </Link>
+      <div className="buttons-container">
+        <div className="buttons">
+          <Link to="/edit-profile" className="btn btn-outline-secondary">
+            <i className="fas fa-user-circle"></i>Edit Profile
+          </Link>
+          <Link to="/add-experience" className="btn btn-outline-secondary">
+            <i className="fab fa-black-tie"></i>Add Experience
+          </Link>
+          <Link to="/add-education" className="btn btn-outline-secondary">
+            <i className="fas fa-graduation-cap"></i>Add Education
+          </Link>
+        </div>
 
         <button className="btn btn-danger">Delete My Account</button>
       </div>
