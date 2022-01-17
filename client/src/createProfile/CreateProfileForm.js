@@ -1,21 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+import ValidateInfoCreateProfile from "./validateInfo/ValidateInfoCreateProfile";
+import useCreateProfileForm from "./hooks/useCreateProfileForm";
 
-function CreateProfileForm() {
-  const [handle, setHandle] = useState("");
-  const [company, setCompany] = useState("");
-  const [website, setWebsite] = useState("");
-  const [location, setLocation] = useState("");
-  const [status, setStatus] = useState("Intern");
-  const [skills, setSkills] = useState([]);
-  const [bio, setBio] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert(
-      `Submiting Name ${handle} , ${company}, ${website}, ${location}, ${status}, ${skills}, ${bio}`
-    );
-  };
+function CreateProfileForm({ submitForm }) {
+  const { handleChange, values, handleSubmit, errors } = useCreateProfileForm(
+    submitForm,
+    ValidateInfoCreateProfile
+  );
 
   return (
     <div className="create-profile">
@@ -35,21 +27,21 @@ function CreateProfileForm() {
           <h6>* = required field</h6>
           <input
             type="text"
-            name="username"
-            value={handle}
-            onChange={(e) => setHandle(e.target.value)}
+            name="handle"
+            value={values.handle}
+            onChange={handleChange}
             placeholder="username*"
           />
+          {errors.handle && <p>{errors.handle}</p>}
           <small>
             A unique handle for your profile URL, Your full name, company name,
             nickname
           </small>
 
           <select
-            defaultValue={status}
-            onChange={(e) => {
-              setStatus(e.target.value);
-            }}
+            name="status"
+            defaultValue={values.status}
+            onChange={handleChange}
             className="form-control"
           >
             <option>Intern</option>
@@ -62,11 +54,9 @@ function CreateProfileForm() {
 
           <input
             type="text"
-            name="work"
-            value={company}
-            onChange={(e) => {
-              setCompany(e.target.value);
-            }}
+            name="company"
+            value={values.company}
+            onChange={handleChange}
             placeholder="Work"
           />
           <small>Could be your own company or one you work for</small>
@@ -74,34 +64,29 @@ function CreateProfileForm() {
           <input
             type="text"
             name="website"
-            value={website}
-            onChange={(e) => {
-              setWebsite(e.target.value);
-            }}
+            value={values.website}
+            onChange={handleChange}
             placeholder="Website"
           />
           <small>Could be your own website or a company one</small>
 
           <input
             type="text"
-            name="city"
-            value={location}
-            onChange={(e) => {
-              setLocation(e.target.value);
-            }}
+            name="location"
+            value={values.location}
+            onChange={handleChange}
             placeholder="City/State"
           />
           <small>City or state suggested eg: Belgrade, SRB</small>
 
           <input
             type="text"
-            name="technology"
-            value={skills}
-            onChange={(e) => {
-              setSkills(e.target.value);
-            }}
+            name="skills"
+            value={values.skills}
+            onChange={handleChange}
             placeholder="technology you work with*"
           />
+          {errors.skills && <p>{errors.skills}</p>}
           <small>
             Please use comma separated values (eg, HTML, CSS, Javascript)
           </small>
@@ -110,10 +95,9 @@ function CreateProfileForm() {
             name="description"
             rows="3"
             cols="50"
-            value={bio}
-            onChange={(e) => {
-              setBio(e.target.value);
-            }}
+            name="bio"
+            value={values.bio}
+            onChange={handleChange}
           />
           <small>Tell us about the position</small>
         </div>

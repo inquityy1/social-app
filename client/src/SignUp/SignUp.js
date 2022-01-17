@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import SignUpForm from "./SignUpForm";
 import SignUpFormSuccess from "./SignUpFormSuccess";
+import UseCreateUser from "./useCases/CreateUser";
 
 import "./SignUp.css";
-import UseCreateUser from "./useCases/CreateUser";
 
 function SignUp() {
   const [isSubmitted, setIsSubmitted] = useState(false);
