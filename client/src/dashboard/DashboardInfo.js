@@ -16,8 +16,8 @@ function DashboardInfo() {
 
       <div className="buttons-container">
         <div className="buttons">
-          <Link to="/edit-profile" className="btn btn-outline-secondary">
-            <i className="fas fa-user-circle"></i>Edit Profile
+          <Link to="/create-profile" className="btn btn-outline-secondary">
+            <i className="fas fa-user-circle"></i>Create Profile
           </Link>
           <Link to="/add-experience" className="btn btn-outline-secondary">
             <i className="fab fa-black-tie"></i>Add Experience
