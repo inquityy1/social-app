@@ -40,7 +40,7 @@ function CreateProfileForm({ submitForm }) {
 
           <select
             name="status"
-            defaultValue={values.status}
+            value={values.status}
             onChange={handleChange}
             className="form-control"
           >

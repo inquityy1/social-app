@@ -1,15 +1,14 @@
 import React from "react";
-import toast, { Toaster } from 'react-hot-toast';
+import UseLoginUser from "./useCases/LoginUser";
+import toast, { Toaster } from "react-hot-toast";
 import LoginForm from "./LoginForm";
 import setAuthToken from "../utils/setAuthToken";
-import UseLoginUser from "./useCases/LoginUser";
 
 import "./Login.css";
 
 function Login() {
   const submitForm = async (userData) => {
     try {
-      
       const response = await UseLoginUser(userData);
       const token = response.data.token;
       // Set token to ls
@@ -18,10 +17,10 @@ function Login() {
       setAuthToken(token);
 
       window.location.pathname = "/dashboard";
-      toast.success('Successfully logged in!')
+      toast.success("Successfully logged in!");
     } catch (error) {
       if (error.response.status === 404) {
-        toast.error('Your email does not exist!')
+        toast.error("Your email does not exist!");
       }
       throw error;
     }
@@ -29,10 +28,7 @@ function Login() {
 
   return (
     <div className="login-container">
-      <Toaster
-      position="top-center"
-      reverseOrder={true}
-      />
+      <Toaster position="top-center" reverseOrder={true} />
       <LoginForm submitForm={submitForm} />
     </div>
   );
