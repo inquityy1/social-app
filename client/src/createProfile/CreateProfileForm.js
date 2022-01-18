@@ -1,11 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import useCreateProfileForm from "./hooks/useCreateProfileForm";
+import validateProfileInfo from "./validateProfileInfo";
 
-export default function CreateProfileForm() {
-  function handleSubmit(e) {
-    e.preventDefault();
-  }
-
+export default function CreateProfileForm({ submitForm }) {
+  const { handleChange, values, handleSubmit, errors } = useCreateProfileForm(
+    submitForm,
+    validateProfileInfo
+  );
   return (
     <div className="create-profile">
       <div className="title">
@@ -22,48 +24,85 @@ export default function CreateProfileForm() {
       <form onSubmit={handleSubmit} className="create-profile-form">
         <div className="text">
           <h6>* = required field</h6>
-          <input type="text" name="username" placeholder="username" />
+          <input
+            type="text"
+            name="handle"
+            placeholder="Enter Your Username"
+            value={values.handle}
+            onChange={handleChange}
+          />
+        {errors.handle && <p>{errors.handle}</p>}
           <small>
             A unique handle for your profile URL, Your full name, company name,
             nickname
           </small>
-
-          <select className="form-control">
-            <option>Inter</option>
-            <option>Junior</option>
-            <option>Medior</option>
-            <option>Senior</option>
-            <option>Architect</option>
+          <select name="status" defaultValue={'DEFAULT'} onChange={handleChange} className="form-control">
+            <option value="DEFAULT" disabled>Choose a position/status ...</option>
+            <option value="Intern">Intern</option>
+            <option value="Junior">Junior</option>
+            <option value="Medior">Medior</option>
+            <option value="Senior">Senior</option>
+            <option value="Architect">Architect</option>
           </select>
+          {errors.status && <p>{errors.status}</p>}
           <small>Give us an idea where you at in your career</small>
-
-          <input type="text" name="work" placeholder="Work" />
-          <small>Could be your own company or one you work for</small>
-
-          <input type="text" name="website" placeholder="Website" />
-          <small>Could be your own websiite or a company one</small>
-
-          <input type="text" name="city" placeholder="City/State" />
-          <small>City or ^ state suggested eg: Belgrade, SRB</small>
 
           <input
             type="text"
-            name="technology"
-            placeholder="technology you work with"
+            name="company"
+            placeholder="Work"
+            value={values.company}
+            onChange={handleChange}
           />
+          {errors.company && <p>{errors.company}</p>}
+          <small>Could be your own company or one you work for</small>
+
+          <input
+            type="text"
+            name="website"
+            placeholder="Website"
+            value={values.website}
+            onChange={handleChange}
+          />
+          {errors.website && <p>{errors.website}</p>}
+          <small>Could be your own website or a company one</small>
+
+          <input
+            type="text"
+            name="location"
+            placeholder="City/State"
+            value={values.location}
+            onChange={handleChange}
+          />
+          {errors.location && <p>{errors.location}</p>}
+          <small>City or ^ state suggested eg: Belgrade, SRB</small>
+          <input
+            type="text"
+            name="skills"
+            placeholder="technology you work with"
+            value={values.skills}
+            onChange={handleChange}
+          />
+          {errors.skills && <p>{errors.skills}</p>}
           <small>
             Please use comma separated values (eg, HTML, CSS, Javascript)
           </small>
 
-          <input type="text" name="github" placeholder="Github" />
-          <small>Include your Github Username</small>
+          {/* <input type="text" name="github" placeholder="Github" />
+          <small>Include your Github Username</small> */}
 
-          <textarea name="description" rows="3" cols="50" />
+          <textarea 
+            name="bio" 
+            value={values.bio}
+            onChange={handleChange}
+            rows="3" 
+            cols="50" 
+          />
           <small>Tell us about the position</small>
         </div>
 
         <div className="create-profile-button">
-          <button className="btn btn-primary">Submit</button>
+          <input type="Submit" className="btn btn-primary" />
         </div>
       </form>
     </div>
