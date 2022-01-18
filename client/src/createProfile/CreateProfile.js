@@ -1,29 +1,34 @@
-import React from "react";
-import toast, { Toaster } from "react-hot-toast";
+import React, { useState } from "react";
 import CreateProfileForm from "./CreateProfileForm";
-import UseCreateUser from "./useCases/CreateProfile";
+import UseCreateProfile from "./useCases/CreateProfile";
 
 import "./CreateProfile.css";
 
-function CreateProfile() {
+export default function CreateProfile() {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isError, setIsError] = useState(false);
   const submitForm = async (profileData) => {
     try {
-      const response = await UseCreateUser(profileData);
-      window.location.pathname = "/dashboard";
+      await UseCreateProfile(profileData);
+      setIsError(false);
     } catch (error) {
       if (error.response.status === 400) {
-        toast.error("You cant use that username");
+        setIsError(true);
       }
       throw error;
     }
+    setIsError(false);
+    setIsSubmitted(true);
   };
 
   return (
     <div className="create-profile-container">
-      <Toaster position="top-center" reverseOrder={true} />
-      <CreateProfileForm submitForm={submitForm} />
+      {isError ? <div>Username already exists</div> : null}
+      {!isSubmitted ? (
+        <CreateProfileForm submitForm={submitForm} />
+      ) : (
+        <div>dasdasdsda</div>
+      )}
     </div>
   );
 }
-
-export default CreateProfile;

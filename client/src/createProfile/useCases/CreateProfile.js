@@ -1,7 +1,7 @@
 import profile from "../../services/profile";
 
-const UseCreateUser = async (userData) => {
-  return profile.create(userData);
+const UseCreateProfile = async (profileData) => {
+  return profile.create(profileData);
 };
 
-export default UseCreateUser;
+export default UseCreateProfile;
