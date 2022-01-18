@@ -41,3 +41,7 @@
   height: 55px;
   margin-top: 20px;
 }
+
+.create-profile form p {
+  color: red;
+}

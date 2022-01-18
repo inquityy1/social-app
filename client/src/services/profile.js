@@ -2,7 +2,7 @@ import axios from "axios";
 import { API_URL } from "../consts";
 
 const create = async (profileData) => {
-  return axios.post(`${API_URL}/profile/create`, profileData);
+  return axios.post(`${API_URL}/profiles/create`, profileData);
 };
 
 export default {
