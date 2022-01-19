@@ -26,7 +26,7 @@ export default function validateProfileInfo(values) {
       values.website
     )
   ) {
-    errors.website = "You need .com at the end";
+    errors.website = "You need .com at the end and www at the beggining";
   }
   return errors;
 }
