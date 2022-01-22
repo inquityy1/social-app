@@ -18,8 +18,8 @@ function CreateExperience() {
       // window.location.pathname = "/dashboard";
       toast.success("Successfully added experience!");
     } catch (error) {
-      if (error.response.status === 400) {
-        toast.error("Your username/handle already exists");
+      if (error) {
+        toast.error("Something went wrong try again");
       }
       throw error;
     }
