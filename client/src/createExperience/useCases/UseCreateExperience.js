@@ -1,7 +1,7 @@
 import ProfileService from "../../services/profile";
 
-const UseCreateProfile = async (expData) => {
+const UseCreateExperience = async (expData) => {
   return ProfileService.saveExperience(expData);
 };
 
-export default UseCreateProfile;
+export default UseCreateExperience;
