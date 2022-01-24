@@ -9,7 +9,12 @@ const saveExperience = async (expData) => {
   return axios.post(`${API_URL}/profiles/add_experience`, expData)
 }
 
+const saveEducation = async (educationData) => {
+  return axios.post(`${API_URL}/profiles/add_education`, educationData)
+}
+
 export default {
   create,
-  saveExperience
+  saveExperience,
+  saveEducation
 };
