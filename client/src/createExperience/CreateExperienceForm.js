@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import validateCreateExperience from "./validationCreateExperience/ValidationCreateExperience";
+import useSaveProfileExperience from "./hooks/useSaveProfileExperience";
 
-function CreateExperienceForm() {
-  function handleSubmit(e) {
-    e.preventDefault();
-  }
+function CreateExperienceForm({ submitForm }) {
+  const { handleChange, values, handleSubmit, errors } =
+    useSaveProfileExperience(submitForm, validateCreateExperience);
 
   return (
     <div className="experience">
@@ -23,24 +24,47 @@ function CreateExperienceForm() {
       <form onSubmit={handleSubmit} className="experience-form">
         <div className="text">
           <small>* = required field</small>
-          <input type="text" name="username" placeholder="Nebojsa" />
-          <input type="text" name="username" placeholder="Junior Developer" />
-          <input type="text" name="username" placeholder="Vrbovac" />
+          <input
+            onChange={handleChange}
+            value={values.title}
+            type="text"
+            name="title"
+            placeholder="Nebojsa"
+          />
+          {errors.title && <p style={{ color: "red" }}>{errors.title}</p>}
+          <input
+            onChange={handleChange}
+            value={values.company}
+            type="text"
+            name="company"
+            placeholder="Junior Developer"
+          />
+          {errors.company && <p style={{ color: "red" }}>{errors.company}</p>}
+          <input
+            onChange={handleChange}
+            value={values.location}
+            type="text"
+            name="location"
+            placeholder="Vrbovac"
+          />
         </div>
         <div className="date">
           <label>From Date</label>
           <input
+            onChange={handleChange}
+            value={values.from}
             type="date"
-            name="trip-start"
+            name="from"
             min="1950-01-01"
-            max="2004-12-31"
           ></input>
+          {errors.from && <p style={{ color: "red" }}>{errors.from}</p>}
           <label>To Date</label>
           <input
+            onChange={handleChange}
+            value={values.to}
             type="date"
-            name="trip-start"
+            name="to"
             min="1950-01-01"
-            max="2004-12-31"
           ></input>
         </div>
 
@@ -50,7 +74,13 @@ function CreateExperienceForm() {
         </div>
 
         <div className="textarea">
-          <textarea name="description" rows="3" cols="50" />
+          <textarea
+            onChange={handleChange}
+            value={values.description}
+            name="description"
+            rows="3"
+            cols="50"
+          />
           <small>Tell us about the position</small>
         </div>
 
