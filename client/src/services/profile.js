@@ -16,8 +16,5 @@ const saveEducation = async (educationData) => {
 export default {
   create,
   saveExperience,
-<<<<<<< HEAD
   saveEducation
-=======
->>>>>>> 671026faf11913c682d51bdc6620f1ca249694b1
 };
