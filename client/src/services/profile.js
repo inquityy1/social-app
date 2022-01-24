@@ -6,10 +6,10 @@ const create = async (profileData) => {
 };
 
 const saveExperience = async (expData) => {
-  return axios.post(`${API_URL}/profiles/add_experience`, expData)
-}
+  return axios.post(`${API_URL}/profiles/add_experience`, expData);
+};
 
 export default {
   create,
-  saveExperience
+  saveExperience,
 };

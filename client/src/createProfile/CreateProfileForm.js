@@ -8,6 +8,7 @@ export default function CreateProfileForm({ submitForm }) {
     submitForm,
     validateProfileInfo
   );
+
   return (
     <div className="create-profile">
       <div className="title">
@@ -31,13 +32,20 @@ export default function CreateProfileForm({ submitForm }) {
             value={values.handle}
             onChange={handleChange}
           />
-        {errors.handle && <p>{errors.handle}</p>}
+          {errors.handle && <p>{errors.handle}</p>}
           <small>
             A unique handle for your profile URL, Your full name, company name,
             nickname
           </small>
-          <select name="status" defaultValue={'DEFAULT'} onChange={handleChange} className="form-control">
-            <option value="DEFAULT" disabled>Choose a position/status ...</option>
+          <select
+            name="status"
+            defaultValue={"DEFAULT"}
+            onChange={handleChange}
+            className="form-control"
+          >
+            <option value="DEFAULT" disabled>
+              Choose a position/status ...
+            </option>
             <option value="Intern">Intern</option>
             <option value="Junior">Junior</option>
             <option value="Medior">Medior</option>
@@ -91,12 +99,12 @@ export default function CreateProfileForm({ submitForm }) {
           {/* <input type="text" name="github" placeholder="Github" />
           <small>Include your Github Username</small> */}
 
-          <textarea 
-            name="bio" 
+          <textarea
+            name="bio"
             value={values.bio}
             onChange={handleChange}
-            rows="3" 
-            cols="50" 
+            rows="3"
+            cols="50"
           />
           <small>Tell us about the position</small>
         </div>
