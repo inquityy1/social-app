@@ -15,8 +15,8 @@ function CreateExperience() {
       setAuthToken(token);
       await UseCreateExperience(profile);
 
-      // window.location.pathname = "/dashboard";
-      toast.success("Successfully added experience!");
+      toast.success("Successfully saved experience!");
+      window.location.pathname = "/dashboard";
     } catch (error) {
       if (error) {
         toast.error("Something went wrong try again");
