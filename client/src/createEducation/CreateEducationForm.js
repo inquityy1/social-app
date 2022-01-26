@@ -7,9 +7,12 @@ function CreateEducationForm({ submitForm }) {
   const { handleChange, values, handleSubmit, errors } =
     useSaveProfileEducation(submitForm, validateCreateEducation);
 
-  const [checked, setChecked] = useState(values.current);
+  const [checked, setChecked] = useState(false);
 
-  const handleChecked = () => setChecked(!checked);
+    const onCheck = e =>  {
+      setChecked(!checked)
+      handleChange(e)
+    }
 
   return (
     <div className="education">
@@ -80,7 +83,13 @@ function CreateEducationForm({ submitForm }) {
         </div>
 
         <div className="checkbox">
-          <input type="checkbox" onChange={handleChecked} checked={checked} />
+          <input 
+            type="checkbox" 
+            name="current" 
+            value={values.current} 
+            onChange={onCheck} 
+            checked={values.current} 
+          />
           <span>Current School</span>
         </div>
 
