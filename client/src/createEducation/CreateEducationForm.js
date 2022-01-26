@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import validateCreateEducation from "./validationCreateEducation/ValidationCreateEducation";
 import useSaveProfileEducation from "./hooks/useSaveProfileEducation";
@@ -6,6 +6,10 @@ import useSaveProfileEducation from "./hooks/useSaveProfileEducation";
 function CreateEducationForm({ submitForm }) {
   const { handleChange, values, handleSubmit, errors } =
     useSaveProfileEducation(submitForm, validateCreateEducation);
+
+  const [checked, setChecked] = useState(values.current);
+
+  const handleChecked = () => setChecked(!checked);
 
   return (
     <div className="education">
@@ -71,11 +75,12 @@ function CreateEducationForm({ submitForm }) {
             name="to"
             min="1950-01-01"
             max="2004-12-31"
+            className={`${checked ? "disable" : ""}`}
           />
         </div>
 
         <div className="checkbox">
-          <input type="checkbox" />
+          <input type="checkbox" onChange={handleChecked} checked={checked} />
           <span>Current School</span>
         </div>
 

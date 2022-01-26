@@ -9,13 +9,14 @@ import "./CreateEducation.css";
 function CreateEducation() {
   const submitForm = async (profile) => {
     try {
+      console.log(profile);
       // Set token for BE calls
       const token = localStorage.getItem("jwtToken");
       setAuthToken(token);
       await UseCreateEducation(profile);
 
       toast.success("Successfully saved education!");
-      window.location.pathname = "/dashboard";
+      // window.location.pathname = "/dashboard";
     } catch (error) {
       if (error) {
         toast.error("Something went wrong try again");
