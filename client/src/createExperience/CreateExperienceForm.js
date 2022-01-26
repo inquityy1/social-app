@@ -29,7 +29,7 @@ function CreateExperienceForm({ submitForm }) {
             value={values.title}
             type="text"
             name="title"
-            placeholder="Nebojsa"
+            placeholder="Name"
           />
           {errors.title && <p style={{ color: "red" }}>{errors.title}</p>}
           <input
@@ -37,7 +37,7 @@ function CreateExperienceForm({ submitForm }) {
             value={values.company}
             type="text"
             name="company"
-            placeholder="Junior Developer"
+            placeholder="Company title"
           />
           {errors.company && <p style={{ color: "red" }}>{errors.company}</p>}
           <input
@@ -45,7 +45,7 @@ function CreateExperienceForm({ submitForm }) {
             value={values.location}
             type="text"
             name="location"
-            placeholder="Vrbovac"
+            placeholder="Location"
           />
         </div>
         <div className="date">

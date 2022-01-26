@@ -46,3 +46,8 @@
   height: 55px;
   margin-top: 20px;
 }
+
+.education .disable {
+  pointer-events: none;
+  background-color: gray;
+}

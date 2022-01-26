@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import validateCreateEducation from "./validationCreateEducation/ValidationCreateEducation";
+import useSaveProfileEducation from "./hooks/useSaveProfileEducation";
 
-function CreateEducationForm() {
-  function handleSubmit(e) {
-    e.preventDefault();
-  }
+function CreateEducationForm({ submitForm }) {
+  const { handleChange, values, handleSubmit, errors } =
+    useSaveProfileEducation(submitForm, validateCreateEducation);
+
+  const [checked, setChecked] = useState(values.current);
+
+  const handleChecked = () => setChecked(!checked);
 
   return (
     <div className="education">
@@ -25,38 +30,64 @@ function CreateEducationForm() {
       <form onSubmit={handleSubmit} className="education-form">
         <div className="text">
           <small>* = required field</small>
-          <input type="text" name="username" placeholder="School" />
           <input
+            onChange={handleChange}
+            value={values.school}
             type="text"
-            name="username"
+            name="school"
+            placeholder="School"
+          />
+          {errors.school && <p style={{ color: "red" }}>{errors.school}</p>}
+          <input
+            onChange={handleChange}
+            value={values.degree}
+            type="text"
+            name="degree"
             placeholder="Degree or Certification"
           />
-          <input type="text" name="username" placeholder="Field Of Study" />
+          {errors.degree && <p style={{ color: "red" }}>{errors.degree}</p>}
+          <input
+            onChange={handleChange}
+            value={values.fieldofstudy}
+            type="text"
+            name="fieldofstudy"
+            placeholder="Field Of Study"
+          />
+          {errors.fieldofstudy && (
+            <p style={{ color: "red" }}>{errors.fieldofstudy}</p>
+          )}
         </div>
         <div className="date">
           <label>From Date</label>
           <input
+            onChange={handleChange}
+            value={values.from}
             type="date"
-            name="trip-start"
+            name="from"
             min="1950-01-01"
-            max="2004-12-31"
-          ></input>
+          />
+          {errors.from && <p style={{ color: "red" }}>{errors.from}</p>}
           <label>To Date</label>
           <input
+            onChange={handleChange}
+            value={values.to}
             type="date"
-            name="trip-start"
+            name="to"
             min="1950-01-01"
             max="2004-12-31"
-          ></input>
+            className={`${checked ? "disable" : ""}`}
+          />
         </div>
 
         <div className="checkbox">
-          <input type="checkbox" />
+          <input type="checkbox" onChange={handleChecked} checked={checked} />
           <span>Current School</span>
         </div>
 
         <div className="textarea">
           <textarea
+            onChange={handleChange}
+            value={values.description}
             name="description"
             rows="3"
             cols="50"

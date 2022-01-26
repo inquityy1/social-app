@@ -9,14 +9,13 @@ import "./CreateExperience.css";
 function CreateExperience() {
   const submitForm = async (profile) => {
     try {
-      console.log(profile);
       // Set token for BE calls
       const token = localStorage.getItem("jwtToken");
       setAuthToken(token);
       await UseCreateExperience(profile);
 
-      // window.location.pathname = "/dashboard";
-      toast.success("Successfully added experience!");
+      toast.success("Successfully saved experience!");
+      window.location.pathname = "/dashboard";
     } catch (error) {
       if (error) {
         toast.error("Something went wrong try again");

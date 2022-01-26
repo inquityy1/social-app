@@ -35,6 +35,7 @@
 
 .header .center {
   display: flex;
+  margin-right: 20px;
 }
 
 .header .center a {
