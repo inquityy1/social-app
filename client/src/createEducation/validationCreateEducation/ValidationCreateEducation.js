@@ -18,7 +18,7 @@ export default function validateCreateEducation(values) {
 
   //from
   if (!values.from) {
-    errors.from = "Please chose your birth date";
+    errors.from = "Your date for work required";
   }
 
   return errors;
