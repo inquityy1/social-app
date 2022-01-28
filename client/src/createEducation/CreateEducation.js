@@ -16,7 +16,7 @@ function CreateEducation() {
       await UseCreateEducation(profile);
 
       toast.success("Successfully saved education!");
-      // window.location.pathname = "/dashboard";
+      window.location.pathname = "/dashboard";
     } catch (error) {
       if (error) {
         toast.error("Something went wrong try again");
