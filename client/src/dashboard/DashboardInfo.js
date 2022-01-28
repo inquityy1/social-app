@@ -1,15 +1,46 @@
 import React from "react";
+import Moment from 'react-moment';
+// import 'moment-timezone';
 import { Link } from "react-router-dom";
 
-function DashboardInfo() {
-  return (
+function DashboardInfo({ profile }) {
+  const education = profile?.education.map(data => (
+    <tr key={data._id}>
+        <td>{data.school}</td>
+        <td>{data.degree}</td>
+        <td>
+            <Moment format="YYYY/MM/DD">{data.from}</Moment> -
+            {data.to === null ? (' Current') : (<Moment format="YYYY/MM/DD">{data.to}</Moment>)}
+        </td>
+        <td>
+            <button className="btn btn-danger">Delete</button>
+        </td>
+    </tr>
+  ));
+  const experience = profile?.experience.map(data => (
+    <tr key={data._id}>
+        <td>{data.company}</td>
+        <td>{data.title}</td>
+        <td>
+            <Moment format="YYYY/MM/DD">{data.from}</Moment> -
+            {data.to === null ? (' Current') : (<Moment format="YYYY/MM/DD">{data.to}</Moment>)}
+        </td>
+        <td>
+            <button className="btn btn-danger">Delete</button>
+        </td>
+    </tr>
+  ));
+  return profile === undefined ? (
+    <h1>LOADING</h1>
+  ) : (
     <div className="dashboard">
       <div className="title">
         <h1>Dashboard</h1>
+
         <p>
           Welcome{" "}
-          <a href="https://github.com/inquityy1" target="_blank">
-            Nebojsa
+          <a target="_blank">
+            { profile.handle }
           </a>
         </p>
       </div>
@@ -42,14 +73,7 @@ function DashboardInfo() {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>inquityy1</td>
-                <td>junior dev</td>
-                <td>2021/12/15-current</td>
-                <td>
-                  <button className="btn btn-danger">Delete</button>
-                </td>
-              </tr>
+              {experience}
             </tbody>
           </table>
         </div>
@@ -64,7 +88,9 @@ function DashboardInfo() {
                 <th scope="col">Years</th>
               </tr>
             </thead>
-            <tbody></tbody>
+            <tbody>
+              {education}
+            </tbody>
           </table>
         </div>
       </div>
