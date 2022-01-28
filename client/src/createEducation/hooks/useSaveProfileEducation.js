@@ -15,13 +15,15 @@ const useSaveProfileEducation = (submitForm, validate) => {
 
   const handleChange = (e) => {
     const { name, value, checked } = e.target;
-    name === 'current' ? setValues({
-      ...values,
-      [name]: checked,
-    }) : setValues({
-      ...values,
-      [name]: value,
-    })
+    name === "current"
+      ? setValues({
+          ...values,
+          [name]: checked,
+        })
+      : setValues({
+          ...values,
+          [name]: value,
+        });
   };
 
   const handleSubmit = (e) => {

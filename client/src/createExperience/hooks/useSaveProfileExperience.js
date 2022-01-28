@@ -14,11 +14,16 @@ const useSaveProfileExperience = (submitForm, validate) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setValues({
-      ...values,
-      [name]: value,
-    });
+    const { name, value, checked } = e.target;
+    name === "current"
+      ? setValues({
+          ...values,
+          [name]: checked,
+        })
+      : setValues({
+          ...values,
+          [name]: value,
+        });
   };
 
   const handleSubmit = (e) => {

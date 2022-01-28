@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import validateCreateExperience from "./validationCreateExperience/ValidationCreateExperience";
 import useSaveProfileExperience from "./hooks/useSaveProfileExperience";
@@ -6,6 +6,13 @@ import useSaveProfileExperience from "./hooks/useSaveProfileExperience";
 function CreateExperienceForm({ submitForm }) {
   const { handleChange, values, handleSubmit, errors } =
     useSaveProfileExperience(submitForm, validateCreateExperience);
+
+  const [checked, setChecked] = useState(false);
+
+  const onCheck = (e) => {
+    setChecked(!checked);
+    handleChange(e);
+  };
 
   return (
     <div className="experience">
@@ -56,7 +63,7 @@ function CreateExperienceForm({ submitForm }) {
             type="date"
             name="from"
             min="1950-01-01"
-          ></input>
+          />
           {errors.from && <p style={{ color: "red" }}>{errors.from}</p>}
           <label>To Date</label>
           <input
@@ -65,11 +72,18 @@ function CreateExperienceForm({ submitForm }) {
             type="date"
             name="to"
             min="1950-01-01"
-          ></input>
+            className={`${checked ? "disable" : ""}`}
+          />
         </div>
 
         <div className="checkbox">
-          <input type="checkbox" />
+          <input
+            type="checkbox"
+            name="current"
+            value={values.current}
+            onChange={onCheck}
+            checked={values.current}
+          />
           <span>Current Job</span>
         </div>
 

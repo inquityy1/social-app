@@ -9,10 +9,10 @@ function CreateEducationForm({ submitForm }) {
 
   const [checked, setChecked] = useState(false);
 
-    const onCheck = e =>  {
-      setChecked(!checked)
-      handleChange(e)
-    }
+  const onCheck = (e) => {
+    setChecked(!checked);
+    handleChange(e);
+  };
 
   return (
     <div className="education">
@@ -83,12 +83,12 @@ function CreateEducationForm({ submitForm }) {
         </div>
 
         <div className="checkbox">
-          <input 
-            type="checkbox" 
-            name="current" 
-            value={values.current} 
-            onChange={onCheck} 
-            checked={values.current} 
+          <input
+            type="checkbox"
+            name="current"
+            value={values.current}
+            onChange={onCheck}
+            checked={values.current}
           />
           <span>Current School</span>
         </div>
