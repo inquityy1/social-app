@@ -9,7 +9,6 @@ import "./CreateEducation.css";
 function CreateEducation() {
   const submitForm = async (profile) => {
     try {
-      console.log(profile);
       // Set token for BE calls
       const token = localStorage.getItem("jwtToken");
       setAuthToken(token);
