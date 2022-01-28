@@ -1,9 +1,8 @@
 import React from "react";
 import Moment from 'react-moment';
-// import 'moment-timezone';
 import { Link } from "react-router-dom";
 
-function DashboardInfo({ profile }) {
+function DashboardInfo({ profile, firstTimeUser }) {
   const education = profile?.education.map(data => (
     <tr key={data._id}>
         <td>{data.school}</td>
@@ -30,8 +29,12 @@ function DashboardInfo({ profile }) {
         </td>
     </tr>
   ));
-  return profile === undefined ? (
+  return profile === undefined && firstTimeUser === false ? (
     <h1>LOADING</h1>
+  ) : firstTimeUser === true ? (
+    <Link to="/create-profile" className="btn btn-outline-secondary">
+      <i className="fas fa-user-circle"></i>Create Profile
+    </Link>
   ) : (
     <div className="dashboard">
       <div className="title">

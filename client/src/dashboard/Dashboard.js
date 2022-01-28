@@ -7,16 +7,17 @@ import UseGetProfile from "../Shared/useCases/useGetProfile";
 
 function Dashboard() {
   const [ profile, setProfile ] = useState(undefined)
+  const  [ firstTimeUser, setFirstTimeUser ] = useState(false)
 
   useEffect(async () => {
     let mounted = true;
     if (mounted) {
-      try {
         const response = await UseGetProfile();
-        setProfile(response.data)
-      } catch (error) {
-        throw error;
-      }
+        if (response.firstTimeUser) {
+          setFirstTimeUser(true)
+        } else {
+          setProfile(response.data)
+        }
     }
     return () => {
       mounted = false;
@@ -26,7 +27,7 @@ function Dashboard() {
   return (
     <div className="dashboard-container">
       <Toaster position="top-center" reverseOrder={true} />
-      <DashboardInfo profile={profile} />
+      <DashboardInfo profile={profile} firstTimeUser={firstTimeUser} />
     </div>
   );
 }

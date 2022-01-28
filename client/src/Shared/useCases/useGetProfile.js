@@ -1,5 +1,4 @@
 import ProfileService from "../../services/profile";
-import toast from "react-hot-toast";
 import setAuthToken from "../../utils/setAuthToken";
 
 const UseGetProfile = async () => {
@@ -9,13 +8,16 @@ const UseGetProfile = async () => {
             throw new Error('Not logged in!')
         }
         setAuthToken(token);
-        return ProfileService.getProfile();
+        const response = await ProfileService.getProfile();
+        // hack for idiotic axios
+        if (response.data) {
+            return response;
+        }
     } catch (error) {
         if (error.response.status === 404) {
-            toast.error("Profile does not exist!");
-            return;
-          }
-        throw error;
+            return { firstTimeUser: true }
+        }
+        throw error
     }
 
 };
