@@ -1,6 +1,10 @@
 import axios from "axios";
 import { API_URL } from "../consts";
 
+const getProfile = async () => {
+  return axios.get(`${API_URL}/profiles`);
+}
+
 const create = async (profileData) => {
   return axios.post(`${API_URL}/profiles/create`, profileData);
 };
@@ -14,6 +18,7 @@ const saveEducation = async (educationData) => {
 };
 
 export default {
+  getProfile,
   create,
   saveExperience,
   saveEducation,
