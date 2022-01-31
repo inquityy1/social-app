@@ -5,7 +5,6 @@ import Dashboard from "./dashboard/Dashboard";
 import PostFeed from "./postFeed/PostFeed";
 import Header from "./Shared/header/Header";
 import Footer from "./Shared/footer/Footer";
-import EditProfile from "./editProfile/EditProfile";
 import CreateExperience from "./createExperience/CreateExperience";
 import CreateEducation from "./createEducation/CreateEducation";
 import Profiles from "./profiles/profilesCard/Profiles";
@@ -29,7 +28,7 @@ function App() {
         <Route element={<ProtectedRoutes />}>
           <Route exact path="/dashboard" element={<Dashboard />} />
           <Route exact path="/feed" element={<PostFeed />} />
-          <Route exact path="/edit-profile" element={<EditProfile />} />
+          <Route exact path="/edit-profile" element={<CreateProfile />} />
           <Route exact path="/add-experience" element={<CreateExperience />} />
           <Route exact path="/add-education" element={<CreateEducation />} />
           <Route exact path="/create-profile" element={<CreateProfile />} />

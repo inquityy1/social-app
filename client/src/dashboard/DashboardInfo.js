@@ -1,50 +1,54 @@
 import React from "react";
-import Moment from 'react-moment';
+import Moment from "react-moment";
 import { Link } from "react-router-dom";
 
 function DashboardInfo({ profile, firstTimeUser }) {
-  const education = profile?.education.map(data => (
+  const education = profile?.education.map((data) => (
     <tr key={data._id}>
-        <td>{data.school}</td>
-        <td>{data.degree}</td>
-        <td>
-            <Moment format="YYYY/MM/DD">{data.from}</Moment> -
-            {data.to === null ? (' Current') : (<Moment format="YYYY/MM/DD">{data.to}</Moment>)}
-        </td>
-        <td>
-            <button className="btn btn-danger">Delete</button>
-        </td>
+      <td>{data.school}</td>
+      <td>{data.degree}</td>
+      <td>
+        <Moment format="YYYY/MM/DD">{data.from}</Moment> -
+        {data.to === null ? (
+          " Current"
+        ) : (
+          <Moment format="YYYY/MM/DD">{data.to}</Moment>
+        )}
+      </td>
+      <td>
+        <button className="btn btn-danger">Delete</button>
+      </td>
     </tr>
   ));
-  const experience = profile?.experience.map(data => (
+  const experience = profile?.experience.map((data) => (
     <tr key={data._id}>
-        <td>{data.company}</td>
-        <td>{data.title}</td>
-        <td>
-            <Moment format="YYYY/MM/DD">{data.from}</Moment> -
-            {data.to === null ? (' Current') : (<Moment format="YYYY/MM/DD">{data.to}</Moment>)}
-        </td>
-        <td>
-            <button className="btn btn-danger">Delete</button>
-        </td>
+      <td>{data.company}</td>
+      <td>{data.title}</td>
+      <td>
+        <Moment format="YYYY/MM/DD">{data.from}</Moment> -
+        {data.to === null ? (
+          " Current"
+        ) : (
+          <Moment format="YYYY/MM/DD">{data.to}</Moment>
+        )}
+      </td>
+      <td>
+        <button className="btn btn-danger">Delete</button>
+      </td>
     </tr>
   ));
   return profile === undefined && firstTimeUser === false ? (
     <h1>LOADING</h1>
   ) : firstTimeUser === true ? (
-    <Link to="/create-profile" className="btn btn-outline-secondary">
+    <Link to="/create-profile" className="first-time btn btn-outline-secondary">
       <i className="fas fa-user-circle"></i>Create Profile
     </Link>
   ) : (
     <div className="dashboard">
       <div className="title">
         <h1>Dashboard</h1>
-
         <p>
-          Welcome{" "}
-          <a target="_blank">
-            { profile.handle }
-          </a>
+          Welcome <a target="_blank">{profile.handle}</a>
         </p>
       </div>
 
@@ -75,9 +79,7 @@ function DashboardInfo({ profile, firstTimeUser }) {
                 <th scope="col">Years</th>
               </tr>
             </thead>
-            <tbody>
-              {experience}
-            </tbody>
+            <tbody>{experience}</tbody>
           </table>
         </div>
 
@@ -91,9 +93,7 @@ function DashboardInfo({ profile, firstTimeUser }) {
                 <th scope="col">Years</th>
               </tr>
             </thead>
-            <tbody>
-              {education}
-            </tbody>
+            <tbody>{education}</tbody>
           </table>
         </div>
       </div>

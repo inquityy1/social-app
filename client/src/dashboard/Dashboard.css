@@ -3,10 +3,6 @@
   justify-content: center;
 }
 
-.dashboard {
-  height: 84vh;
-}
-
 .dashboard-container .title {
   margin-top: 15px;
 }
@@ -54,4 +50,14 @@
 
 .dashboard-container .tables .education-table {
   margin-top: 30px;
+}
+
+.first-time {
+  margin-top: 30vh;
+  margin-bottom: 31vh;
+  width: 100%;
+  height: 23vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
