@@ -6,23 +6,23 @@ import "./Dashboard.css";
 import UseGetProfile from "../Shared/useCases/useGetProfile";
 
 function Dashboard() {
-  const [ profile, setProfile ] = useState(undefined)
-  const  [ firstTimeUser, setFirstTimeUser ] = useState(false)
+  const [profile, setProfile] = useState(undefined);
+  const [firstTimeUser, setFirstTimeUser] = useState(false);
 
   useEffect(async () => {
     let mounted = true;
     if (mounted) {
-        const response = await UseGetProfile();
-        if (response.firstTimeUser) {
-          setFirstTimeUser(true)
-        } else {
-          setProfile(response.data)
-        }
+      const response = await UseGetProfile();
+      if (response.firstTimeUser) {
+        setFirstTimeUser(true);
+      } else {
+        setProfile(response.data);
+      }
     }
     return () => {
       mounted = false;
-    }
-  }, [UseGetProfile])
+    };
+  }, [UseGetProfile]);
 
   return (
     <div className="dashboard-container">

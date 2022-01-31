@@ -47,7 +47,6 @@ function DashboardInfo({ profile, firstTimeUser }) {
     <div className="dashboard">
       <div className="title">
         <h1>Dashboard</h1>
-
         <p>
           Welcome <a target="_blank">{profile.handle}</a>
         </p>
