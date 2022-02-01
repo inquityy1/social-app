@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import DashboardInfo from "./DashboardInfo";
 import { Toaster } from "react-hot-toast";
+import UseGetProfile from "../Shared/useCases/useGetProfile";
 
 import "./Dashboard.css";
-import UseGetProfile from "../Shared/useCases/useGetProfile";
 
 function Dashboard() {
   const [profile, setProfile] = useState(undefined);
