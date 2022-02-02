@@ -9,14 +9,22 @@ import "./CreateProfile.css";
 
 export default function CreateProfile() {
   const [profile, setProfile] = useState(undefined);
-  const [firstTimeUser, setFirstTimeUser] = useState(false);
 
   useEffect(async () => {
     let mounted = true;
     if (mounted) {
+      const initialUser = {
+        handle: "",
+        company: "",
+        website: "",
+        bio: "",
+        location: "",
+        status: "",
+        skills: "",
+      }
       const response = await UseGetProfile();
       if (response.firstTimeUser) {
-        setFirstTimeUser(true);
+        setProfile(initialUser);
       } else {
         setProfile(response.data);
       }
@@ -47,7 +55,6 @@ export default function CreateProfile() {
     <div className="create-profile-container">
       <Toaster position="top-center" reverseOrder={true} />
       <CreateProfileForm
-        firstTimeUser={firstTimeUser}
         profile={profile}
         submitForm={submitForm}
       />

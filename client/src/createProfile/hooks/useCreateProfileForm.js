@@ -1,15 +1,7 @@
 import { useState, useEffect } from "react";
 
-const useCreateProfileForm = (submitForm, validate) => {
-  const [values, setValues] = useState({
-    handle: "",
-    company: "",
-    website: "",
-    bio: "",
-    location: "",
-    status: "",
-    skills: "",
-  });
+const useCreateProfileForm = (profile, submitForm, validate) => {
+  const [values, setValues] = useState(profile);
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -28,6 +20,16 @@ const useCreateProfileForm = (submitForm, validate) => {
     setErrors(validate(values));
     setIsSubmitting(true);
   };
+
+  useEffect(async () => {
+    let mounted = true;
+    if (mounted, profile) {
+      setValues(profile)
+    }
+    return () => {
+      mounted = false;
+    };
+  }, [profile, setValues]);
 
   useEffect(() => {
     if (Object.keys(errors).length === 0 && isSubmitting) {
