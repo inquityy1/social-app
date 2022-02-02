@@ -1,5 +1,4 @@
 import React from "react";
-import SignUp from "../signUp/SignUp";
 import { Navigate, Outlet } from "react-router-dom";
 
 const ProtectedRoutes = () => {

@@ -13,8 +13,15 @@ const useCreateProfileForm = (submitForm, validate) => {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  useEffect(() => {
+    if (Object.keys(errors).length === 0 && isSubmitting) {
+      submitForm(values);
+    }
+
+    console.log(values);
+  }, [isSubmitting, submitForm, errors, values]);
+
   const handleChange = (e) => {
-    e.preventDefault();
     const { name, value } = e.target;
     setValues({
       ...values,
@@ -26,14 +33,9 @@ const useCreateProfileForm = (submitForm, validate) => {
     e.preventDefault();
 
     setErrors(validate(values));
+
     setIsSubmitting(true);
   };
-
-  useEffect(() => {
-    if (Object.keys(errors).length === 0 && isSubmitting) {
-      submitForm(values);
-    }
-  }, [isSubmitting, submitForm, errors, values]);
 
   return { handleChange, values, handleSubmit, errors };
 };
