@@ -3,13 +3,16 @@ import { Link } from "react-router-dom";
 import useCreateProfileForm from "./hooks/useCreateProfileForm";
 import validateProfileInfo from "./validateProfileInfo";
 
-export default function CreateProfileForm({ submitForm }) {
+function CreateProfileForm({ submitForm, profile }) {
   const { handleChange, values, handleSubmit, errors } = useCreateProfileForm(
+    profile,
     submitForm,
     validateProfileInfo
   );
 
-  return (
+  return profile === undefined ? (
+    <h1>LOADING</h1>
+  ) : (
     <div className="create-profile">
       <div className="title">
         <div>
@@ -29,9 +32,10 @@ export default function CreateProfileForm({ submitForm }) {
             type="text"
             name="handle"
             placeholder="Enter Your Username"
-            value={values.handle}
+            value={values?.handle}
             onChange={handleChange}
           />
+
           {errors.handle && <p>{errors.handle}</p>}
           <small>
             A unique handle for your profile URL, Your full name, company name,
@@ -59,7 +63,7 @@ export default function CreateProfileForm({ submitForm }) {
             type="text"
             name="company"
             placeholder="Work"
-            value={values.company}
+            value={values?.company}
             onChange={handleChange}
           />
           {errors.company && <p>{errors.company}</p>}
@@ -69,7 +73,7 @@ export default function CreateProfileForm({ submitForm }) {
             type="text"
             name="website"
             placeholder="Website"
-            value={values.website}
+            value={values?.website}
             onChange={handleChange}
           />
           {errors.website && <p>{errors.website}</p>}
@@ -79,7 +83,7 @@ export default function CreateProfileForm({ submitForm }) {
             type="text"
             name="location"
             placeholder="City/State"
-            value={values.location}
+            value={values?.location}
             onChange={handleChange}
           />
           {errors.location && <p>{errors.location}</p>}
@@ -88,7 +92,7 @@ export default function CreateProfileForm({ submitForm }) {
             type="text"
             name="skills"
             placeholder="technology you work with"
-            value={values.skills}
+            value={values?.skills}
             onChange={handleChange}
           />
           {errors.skills && <p>{errors.skills}</p>}
@@ -101,7 +105,7 @@ export default function CreateProfileForm({ submitForm }) {
 
           <textarea
             name="bio"
-            value={values.bio}
+            value={values?.bio}
             onChange={handleChange}
             rows="3"
             cols="50"
@@ -116,3 +120,5 @@ export default function CreateProfileForm({ submitForm }) {
     </div>
   );
 }
+
+export default CreateProfileForm;
